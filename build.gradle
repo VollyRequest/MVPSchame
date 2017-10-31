@@ -1,0 +1,43 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+
+        classpath 'me.tatarka:gradle-retrolambda:3.2.4'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+ext{
+    appcompatV7 = '26.0.2'
+    surppotV4 = '25.0.0'
+    design = '25.0.0'
+    rxjava ='2.0.0-RC2'
+    rxandroid = '2.0.0-RC1'
+    rxlifecycle = '2.2.0'
+    retrofitVersion = '2.1.0'
+    gson = '2.1.0'
+    fastjson = '1.2.37'
+    rxAdapter = '1.0.0-RC2'
+    okhttp3 = 'logging-interceptor:+'
+    supertoasts = '2.0'
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        // 解决Failed to resolve: com.android.support:appcompat-v7:26.0.0
+        maven {
+            url "https://maven.google.com"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
